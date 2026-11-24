@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carlos Freire | Software Engineer</title>
+<meta name="description" content="Carlos Freire — software engineer focused on backend systems, full-stack development, and machine learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;family=Pixelify+Sans:wght@700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<style>
+:root{--saber:#3fd6f2;--saber2:#8ae8f9}
+html{scroll-behavior:smooth}
+body{margin:0;background:#06070f;color:#e9ebf5;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--saber,#3fd6f2)}
+::selection{background:#ff5c86;color:#fff}
+
+/* pixel-notched corners */
+.px8{clip-path:polygon(0 8px,8px 8px,8px 0,calc(100% - 8px) 0,calc(100% - 8px) 8px,100% 8px,100% calc(100% - 8px),calc(100% - 8px) calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,8px calc(100% - 8px),0 calc(100% - 8px))}
+.px6{clip-path:polygon(0 6px,6px 6px,6px 0,calc(100% - 6px) 0,calc(100% - 6px) 6px,100% 6px,100% calc(100% - 6px),calc(100% - 6px) calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,6px calc(100% - 6px),0 calc(100% - 6px))}
+.px4{clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))}
+
+/* hover states */
+.btn-primary:hover{background:#f4f6fc !important;color:#06070f !important}
+.btn-ghost:hover{border-color:var(--saber,#3fd6f2) !important;color:#e9ebf5 !important}
+.frame{display:block;padding:2px;background:#2e3554}
+a.frame:hover{background:var(--saber,#3fd6f2)}
+.quest:hover{border-color:var(--saber,#3fd6f2) !important}
+
+/* shared project pieces */
+.project{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:center}
+.bar{display:flex;justify-content:space-between;padding:9px 14px;font-family:'Silkscreen',monospace;font-size:11px;color:#9aa1bd;border-bottom:2px solid #1c2138}
+.shot{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.kicker{font-family:'Silkscreen',monospace;font-size:11px;letter-spacing:0.1em;color:var(--saber,#3fd6f2);margin-bottom:14px}
+.title{margin:0 0 16px;font-weight:600;font-size:clamp(30px,3.4vw,42px);line-height:1.05;letter-spacing:-0.025em;color:#f4f6fc}
+.desc{margin:0 0 24px;font-size:16px;line-height:1.7;color:#b9bfd6;text-wrap:pretty}
+.stats{display:flex;flex-wrap:wrap;gap:36px;margin-bottom:24px}
+.stat-n{font-weight:600;font-size:30px;letter-spacing:-0.02em;color:#ffd166}
+.stat-l{font-family:'Geist Mono',monospace;font-size:12px;color:#9aa1bd}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;font-family:'Geist Mono',monospace;font-size:12px;color:#b9bfd6}
+.tags span{padding:4px 9px;background:#12162a;border:1px solid #262c47}
+.links{display:flex;flex-wrap:wrap;gap:8px 24px;font-family:'Silkscreen',monospace;font-size:12px;color:var(--saber,#3fd6f2)}
+
+.quest{display:flex;flex-direction:column;background:#0d1020;border:1px solid #262c47}
+.quest img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.quest .body{padding:20px 22px 22px}
+.quest h4{margin:0 0 10px;font-weight:600;font-size:21px;letter-spacing:-0.015em;color:#f4f6fc}
+.quest p{margin:0 0 14px;font-size:14.5px;line-height:1.6;color:#a9afc8;text-wrap:pretty}
+.quest .stack{font-family:'Geist Mono',monospace;font-size:12px;color:#7d84a3}
+
+.eyebrow{font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:0.2em;color:var(--saber,#3fd6f2);margin-bottom:12px}
+.h2{margin:0 0 40px;font-weight:600;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:-0.03em;color:#f4f6fc}
+
+.job{display:flex;flex-wrap:wrap;gap:8px 48px;padding:28px 0;border-top:2px dashed #262c47}
+.job .when{flex:0 0 190px;font-family:'Geist Mono',monospace;font-size:13px;color:#ffd166;padding-top:5px}
+.job .what{flex:1;min-width:260px}
+.job .role{font-weight:600;font-size:21px;letter-spacing:-0.015em;color:#f4f6fc}
+.job p{margin:8px 0 0;font-size:15.5px;line-height:1.65;color:#a9afc8;max-width:720px;text-wrap:pretty}
+
+.skill h3{margin:0 0 14px;font-family:'Silkscreen',monospace;font-size:11px;font-weight:400;letter-spacing:0.15em;color:#9aa1bd}
+.skill p{margin:0;font-size:18px;line-height:1.6;color:#e9ebf5}
+
+/* kinetic type (hero name) */
+.kt-word{display:inline-block;white-space:nowrap}
+.kt-ch{display:inline-block;will-change:transform}
+
+/* ascii space-battle band */
+.ascii{margin:0;font-family:'Geist Mono',ui-monospace,monospace;font-weight:400;white-space:pre;line-height:1;user-select:none;-webkit-user-select:none}
+.ascii-band{position:relative;overflow:hidden;padding:6px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+#hyper{font-size:clamp(9px,1.1vw,13px);line-height:1.15;color:#3a4160}
+.h-s1{color:#2e3554}.h-s2{color:#5d6590}.h-s3{color:#c9d2ff}.h-sh{color:#e9ebf5}.h-ck{color:var(--saber,#3fd6f2)}.h-fl{color:#ffd166}.h-lz{color:#ff5c86}.h-tie{color:#9aa1bd}
+@media (max-width:520px){#hyper{font-size:9px}}
+
+/* split-flap boards */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.flapboard{--fw:.86em;--fh:1.38em;--fg:.12em}
+.flaps{display:inline-flex;gap:var(--fg);vertical-align:middle}
+.flap{position:relative;display:block;flex:0 0 auto;width:var(--fw);height:var(--fh);perspective:5em;background:#0a0c18;box-shadow:0 0 0 1px #262c47,0 2px 0 1px #03040a}
+.flap>span{position:absolute;left:0;right:0;height:50%;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.flap .t{top:0;background:linear-gradient(#1b2039,#141830);transform-origin:50% 100%}
+.flap .b{bottom:0;background:linear-gradient(#10142a,#0c0f1e);transform-origin:50% 0}
+.flap i{position:absolute;left:0;right:0;height:200%;line-height:var(--fh);text-align:center;font-style:normal;white-space:pre}
+.flap .t i{top:0}
+.flap .b i{bottom:0}
+.flap::after{content:'';position:absolute;z-index:3;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:#05060c;box-shadow:-1px 0 0 #3a4160,1px 0 0 #3a4160}
+.flap .fold{display:none;z-index:2}
+.flap .t.fold{background:linear-gradient(#20263f,#171b33)}
+.flap .b.fold{transform:rotateX(90deg)}
+.flap.flipping .fold{display:block}
+/* hero highlights: flat split-flap panel */
+#feats{--fw:.8em;--fh:1.45em;--fg:.1em;align-self:flex-start;display:inline-flex;margin:30px 0 0;padding:.3em;font-family:'Geist Mono',ui-monospace,monospace;font-weight:500;font-size:clamp(10px,3.3vw,22px);color:#8ae8f9;background:#0d0f19;border:1px solid #2e3554}
+#feats .flap{background:#0b1422;box-shadow:0 0 0 1px #1f3348}
+#feats .flap .t,#feats .flap .t.fold{background:#0f1a2a}
+#feats .flap .b{background:#0b1422}
+#feats .flap::after{height:1px;margin-top:0;background:#05060c;box-shadow:none}
+#feats .flap i{letter-spacing:0}
+.stat-n .flaps{font-size:.8em}
+</style>
+</head>
+<body>
+<div style="position:relative; min-height:100vh; background:#06070f; overflow-x:hidden;">
+
+<div id="stars" style="position:fixed; inset:0; z-index:0; pointer-events:none; background-size:480px 480px; image-rendering:pixelated; opacity:0.35;"></div>
+<div id="twinkle" style="position:fixed; inset:0; z-index:0; pointer-events:none; background-size:720px 720px; image-rendering:pixelated; opacity:0.45;"></div>
+
+<div style="position:fixed; right:14px; top:50%; transform:translateY(-50%); z-index:55; display:flex; flex-direction:column; align-items:center; gap:6px; font-family:'Silkscreen',monospace; font-size:11px; color:#9aa1bd;">
+  <div style="width:2px; height:110px; background:repeating-linear-gradient(180deg,#3a4160 0 4px,transparent 4px 12px);"></div>
+  <div id="depth" style="padding:3px 6px; background:#0d1020; border:2px solid #262c47; color:#e9ebf5;">0 LY</div>
+</div>
+
+<div style="position:relative; z-index:1;">
+
+<header id="top" style="position:relative; min-height:100vh; display:flex; flex-direction:column; overflow:hidden;">
+  <img id="planet" alt="" style="position:absolute; top:12%; right:6%; width:clamp(120px,16vw,240px); image-rendering:pixelated; pointer-events:none;">
+  <img id="moon" alt="" style="position:absolute; top:34%; right:24%; width:clamp(36px,4vw,56px); image-rendering:pixelated; pointer-events:none; opacity:0.85;">
+
+  <nav style="position:relative; z-index:2; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding:22px clamp(16px,3vw,40px);">
+    <a href="#top" style="font-family:'Silkscreen',monospace; font-size:14px; color:#e9ebf5;">C.F.</a>
+    <div style="display:flex; gap:clamp(14px,2.4vw,28px); flex-wrap:wrap; font-family:'Geist Mono',monospace; font-size:13px; color:#9aa1bd;">
+      <a href="#projects">projects</a>
+      <a href="#log">experience</a>
+      <a href="#skills">skills</a>
+    </div>
+  </nav>
+
+  <div style="position:relative; z-index:2; flex:1; display:flex; flex-direction:column; justify-content:center; padding:24px clamp(20px,4vw,56px) 32px; max-width:1240px; width:100%; margin:0 auto;">
+    <p style="margin:0 0 22px; font-family:'Silkscreen',monospace; font-size:13px; letter-spacing:0.2em; color:var(--saber,#3fd6f2);">▶ SOFTWARE ENGINEER</p>
+    <div id="name" style="position:relative; align-self:flex-start; clip-path:inset(-20% 100% -20% 0);">
+      <h1 style="margin:0; font-family:'Pixelify Sans',sans-serif; font-weight:700; font-size:clamp(56px,11vw,168px); line-height:1; letter-spacing:0.01em; color:#ffffff; text-shadow:0 3px 0 var(--saber,#3fd6f2), 0 -3px 0 var(--saber,#3fd6f2), 3px 0 0 var(--saber,#3fd6f2), -3px 0 0 var(--saber,#3fd6f2), 3px 3px 0 var(--saber,#3fd6f2), -3px -3px 0 var(--saber,#3fd6f2), 3px -3px 0 var(--saber,#3fd6f2), -3px 3px 0 var(--saber,#3fd6f2);">Carlos Freire</h1>
+    </div>
+    <p style="margin:28px 0 0;font-family:'Geist Mono',monospace;font-size:clamp(12px,2vw,16px);color:#8ae8f9;">BACKEND · FULL-STACK · MACHINE LEARNING</p>
+</div>
+
+  <div style="position:relative; z-index:2; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:32px 48px; padding:0 clamp(20px,4vw,56px) 72px; max-width:1240px; width:100%; margin:0 auto;">
+    <div class="px6" style="padding:2px; background:#3a4160; flex-shrink:0;">
+      <div id="face" class="px4" aria-label="Carlos Freire initials" style="display:flex; width:clamp(170px,18vw,210px); height:clamp(170px,18vw,210px); align-items:center;justify-content:center;background:#0d1020;color:#3fd6f2;font-family:'Pixelify Sans',sans-serif;font-size:clamp(56px,8vw,88px);border:2px solid #3a4160;">CF</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px; flex:1 1 360px; max-width:620px; font-size:clamp(17px,1.6vw,20px); line-height:1.6; color:#b9bfd6; text-wrap:pretty;">
+      <p style="margin:0; color:#f4f6fc;">Hi! Welcome to my website :)</p>
+      <p style="margin:0;">I'm a software engineer and Brown University Computer Science graduate interested in backend engineering, full-stack systems, and machine learning.</p>
+      <p style="margin:0;">I enjoy building practical software, exploring systems design, and applying machine learning to real-world problems.</p>
+      <p style="margin:0;">Take a look at projects I've built and the work I've done.</p>
+      <div style="display:flex; gap:12px; margin-top:10px; flex-wrap:wrap; font-family:'Silkscreen',monospace; font-size:14px; letter-spacing:0.08em;">
+        <a href="#projects" class="btn-primary px4" style="padding:14px 22px; background:var(--saber,#3fd6f2); color:#06070f;">▼ SEE PROJECTS</a>
+        <a href="mailto:carlos_freire@brown.edu" class="btn-ghost" style="padding:12px 20px; border:2px solid #3a4160; color:#e9ebf5;">SAY HI</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ascii-band" aria-hidden="true"><pre id="hyper" class="ascii"></pre></div>
+
+<section id="projects" style="max-width:1240px; margin:0 auto; padding:88px clamp(20px,4vw,56px) 64px;">
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:64px; padding-bottom:20px; border-bottom:2px dashed #262c47;">
+    <div><div class="eyebrow">01 / PROJECTS</div><h2 class="h2" style="margin:0;">Things I've built</h2></div>
+    <span style="font-family:'Geist Mono',monospace; font-size:13px; color:#9aa1bd;">2025 → 2026</span>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:104px;">
+    <article class="project">
+      <div class="frame px8"><div class="px6" style="background:#0d1020;">
+        <div class="bar"><span>pulse / alert pipeline</span><span>01</span></div>
+        <div style="aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:clamp(20px,4vw,44px);font-family:'Geist Mono',monospace;color:#9aa1bd;font-size:clamp(12px,1.25vw,15px);">
+          <span style="color:#f4f6fc;">$ pulse --watch jobs</span><span>ingest → normalize → filter</span><span>deduplicate → retry → notify</span>
+          <span style="color:#3fd6f2;">redis · kafka · fastapi</span><span style="margin-top:10px;color:#ffd166;font-size:clamp(22px,3vw,38px);">REAL-TIME ALERTS</span>
+        </div>
+      </div></div>
+      <div><div class="kicker">BACKEND · DISTRIBUTED SYSTEMS</div><h3 class="title">Pulse — Job Discovery &amp; Alerting Platform</h3>
+        <p class="desc">Built a real-time job discovery and alerting platform that ingests job listings, normalizes and filters them, deduplicates results, handles retries, and delivers alerts. Designed the service around an API and event-driven processing pipeline.</p>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>MySQL</span><span>Redis</span><span>Kafka</span><span>AWS</span><span>Docker</span><span>Kubernetes</span></div>
+      </div>
+    </article>
+    <article class="project">
+      <div class="frame px8"><div class="px6" style="background:#0a0c18;">
+        <div class="bar"><span>visual reasoning / probes</span><span>02</span></div>
+        <div style="aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:clamp(20px,4vw,44px);font-family:'Geist Mono',monospace;color:#9aa1bd;font-size:clamp(12px,1.25vw,15px);">
+          <span style="color:#f4f6fc;">$ evaluate --dataset RAVEN</span><span>20,000 puzzles · 250+ probes</span><span>CLIP ............ 92.7%</span><span>DINOv3 .......... 95.8%</span>
+          <span style="margin-top:10px;color:#ffd166;font-size:clamp(22px,3vw,38px);">REPRESENTATION ANALYSIS</span>
+        </div>
+      </div></div>
+      <div><div class="kicker">MACHINE LEARNING · RESEARCH</div><h3 class="title">Visual Reasoning with CLIP &amp; DINOv3</h3>
+        <p class="desc">Evaluated visual representations on 20,000 RAVEN abstract-reasoning puzzles using GPU-based experiments on Brown's OSCAR cluster. Ran 250+ linear and MLP probes across model layers to assess rule-classification performance and compare representations.</p>
+        <div class="stats"><div><div class="stat-n">95.8%</div><div class="stat-l">DINOv3 accuracy</div></div><div><div class="stat-n">92.7%</div><div class="stat-l">CLIP accuracy</div></div><div><div class="stat-n">20K</div><div class="stat-l">puzzles evaluated</div></div></div>
+        <div class="tags"><span>PyTorch</span><span>Hugging Face</span><span>NumPy</span><span>SLURM</span><span>GPU Computing</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="log" style="max-width:1240px; margin:0 auto; padding:96px clamp(20px,4vw,56px) 64px;">
+  <div class="eyebrow">02 / EXPERIENCE</div><h2 class="h2">Where I've worked</h2>
+  <div style="display:flex; flex-direction:column;">
+    <div class="job"><div class="when">Oct 2025 → Jan 2026</div><div class="what">
+      <div class="role">Contract Software Engineer · LNJ Home Improvement</div>
+      <p>Developed a multi-tenant construction management platform using Spring Boot and PostgreSQL, with JWT-based role access control. Built an LLM-powered assistant using FastAPI, Qdrant, and tool calling, with tenant isolation.</p>
+    </div></div>
+    <div class="job"><div class="when">Feb 2025 → May 2026</div><div class="what">
+      <div class="role">Full Stack Engineer · Full Stack @ Brown</div>
+      <p>Built and maintained web applications using Next.js, server-side rendering, and API routes. Improvements reduced load times by 45%, hosting costs by more than 80%, content update time by 60%, and production errors by 80%.</p>
+    </div></div>
+    <div class="job" style="border-bottom:2px dashed #262c47;"><div class="when">May → Aug 2025</div><div class="what">
+      <div class="role">Manufacturing Process Improvement Intern · Valley Tool &amp; Manufacturing</div>
+      <p>Automated operational workflows with VBA and Python, and analyzed Voice of Customer and Oracle data across 500+ parts. Process improvements helped reduce waste by 12%.</p>
+    </div></div>
+  </div>
+</section>
+
+<section id="skills" style="max-width:1240px; margin:0 auto; padding:64px clamp(20px,4vw,56px) 96px;">
+  <div class="eyebrow">03 / TOOLKIT</div><h2 class="h2">What I use</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:40px;">
+    <div class="skill"><h3>LANGUAGES</h3><p>Python, Java, C++, SQL, JavaScript, TypeScript</p></div>
+    <div class="skill"><h3>FRAMEWORKS</h3><p>Spring Boot, FastAPI, React, Next.js</p></div>
+    <div class="skill"><h3>DATABASES &amp; MESSAGING</h3><p>PostgreSQL, MySQL, Redis, Qdrant, DynamoDB, Kafka</p></div>
+    <div class="skill"><h3>TOOLS &amp; INFRASTRUCTURE</h3><p>AWS, Docker, Kubernetes, Git, Linux, SLURM, TensorFlow, Keras</p></div>
+  </div>
+</section>
+
+<footer style="max-width:1240px; margin:0 auto; padding:40px clamp(20px,4vw,56px) 56px; border-top:2px dashed #262c47;">
+  <div style="display:flex; flex-wrap:wrap; gap:14px 28px; font-family:'Geist Mono',monospace; font-size:14px; color:#c3c8dc;">
+    <a href="mailto:carlos_freire@brown.edu">carlos_freire@brown.edu</a>
+    <a href="https://github.com/carlos-freire2" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
+</div>
+</div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- pixel-art sprites, generated as SVG data URIs ----
+  const svg = (w, h, rects) => 'data:image/svg+xml,' + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" shape-rendering="crispEdges">${rects}</svg>`);
+  const px = (rows, pal) => {
+    const w = rows[0].length; let r = '';
+    rows.forEach((row, y) => {
+      let x = 0;
+      while (x < w) {
+        const c = row[x]; let n = 1;
+        while (x + n < w && row[x + n] === c) n++;
+        if (pal[c]) r += `<rect x="${x}" y="${y}" width="${n}" height="1" fill="${pal[c]}"/>`;
+        x += n;
+      }
+    });
+    return svg(w, rows.length, r);
+  };
+  const rng = seed => () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  const starTile = (size, count, seed, sizes, colors) => {
+    const r = rng(seed); let s = '';
+    for (let i = 0; i < count; i++) {
+      const x = Math.floor(r() * size), y = Math.floor(r() * size), z = sizes[Math.floor(r() * sizes.length)];
+      s += `<rect x="${x}" y="${y}" width="${z}" height="${z}" fill="${colors[Math.floor(r() * colors.length)]}"/>`;
+    }
+    return svg(size, size, s);
+  };
+  const planet = () => {
+    const W = 44, H = 30, cx = 22, cy = 15, R = 10, rows = [];
+    for (let y = 0; y < H; y++) {
+      let row = '';
+      for (let x = 0; x < W; x++) {
+        const dx = x - cx + 0.5, dy = y - cy + 0.5, inP = dx * dx + dy * dy <= R * R;
+        const e = Math.pow(dx / 20, 2) + Math.pow((dy - dx * 0.18) / 4.2, 2);
+        const ring = e > 0.72 && e < 1.0;
+        const front = (dy - dx * 0.18) > 0;
+        let c = '.';
+        if (inP) {
+          c = ['a', 'b', 'c'][Math.floor((dy + R) / 3.2) % 3];
+          if (dx + dy > 7) c = 'd';
+          if (dx + dy < -9) c = 'e';
+        }
+        if (ring && (!inP || front)) c = (e > 0.86 ? 'r' : 's');
+        row += c;
+      }
+      rows.push(row);
+    }
+    return px(rows, { a: '#ff8a5c', b: '#e8664a', c: '#ffb07a', d: '#8f3b45', e: '#ffd2a8', r: '#9d8cff', s: '#c9bdff' });
+  };
+
+  $('stars').style.backgroundImage = `url("${starTile(240, 70, 7, [1, 1, 1, 2], ['#ffffff', '#c9d2ff', '#8e97c4', '#5d6590'])}")`;
+  $('twinkle').style.backgroundImage = `url("${starTile(360, 14, 42, [2, 3], ['#ffffff', '#ffe9b0', '#bfe9ff'])}")`;
+  $('planet').src = planet();
+  $('moon').src = px([
+    '...mmmm...',
+    '..mmmmmm..',
+    '.mmmdmmmm.',
+    'mmmmmmmmdm',
+    'mmdmmmmmmd',
+    'mmmmmdmmdd',
+    '.mmmmmmdd.',
+    '..mmmmdd..',
+    '...dddd...',
+  ], { m: '#d8dbe8', d: '#9a9fb6' });
+// ---- intro + ambient animation ----
+  $('name').animate(
+    [{ clipPath: 'inset(-20% 100% -20% 0)' }, { clipPath: 'inset(-20% 0% -20% 0)' }],
+    { duration: reduced ? 0 : 650, delay: reduced ? 0 : 500, easing: 'steps(18, end)', fill: 'forwards' });
+  if (!reduced) {
+    $('twinkle').animate([{ opacity: 0.45 }, { opacity: 0.12 }],
+      { duration: 2400, direction: 'alternate', iterations: Infinity, easing: 'steps(3)' });
+    $('planet').animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-12px)' }],
+      { duration: 6000, direction: 'alternate', iterations: Infinity, easing: 'steps(6)' });
+    $('cursor').animate([{ opacity: 1 }, { opacity: 0 }], { duration: 1000, iterations: Infinity, easing: 'steps(2, jump-none)' });
+  }
+
+  // ---- scroll depth meter ----
+  const depth = $('depth');
+  window.addEventListener('scroll', () => { depth.textContent = Math.round(window.scrollY / 40) + ' LY'; }, { passive: true });
+
+  // ---- kinetic type: name letters hop as the cursor passes near (mouse only) ----
+  const h1 = document.querySelector('#name h1');
+  if (h1 && !reduced && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const text = h1.textContent;
+    h1.setAttribute('aria-label', text);
+    h1.textContent = '';
+    text.split(/(\s+)/).forEach(part => {
+      if (!part) return;
+      if (/^\s+$/.test(part)) { h1.appendChild(document.createTextNode(' ')); return; }
+      const w = document.createElement('span');
+      w.className = 'kt-word'; w.setAttribute('aria-hidden', 'true');
+      for (const ch of part) {
+        const c = document.createElement('span');
+        c.className = 'kt-ch'; c.textContent = ch;
+        w.appendChild(c);
+      }
+      h1.appendChild(w);
+    });
+    const chars = Array.from(h1.querySelectorAll('.kt-ch'));
+    let mx = -1e4, my = -1e4, pending = false;
+    const LIFT = 15, STEP = 3;
+    const frame = () => {
+      pending = false;
+      chars.forEach(c => {
+        const r = c.getBoundingClientRect();
+        const R = Math.max(90, r.height * 1.1);
+        const d = Math.hypot(mx - (r.left + r.width / 2), my - (r.top + r.height / 2));
+        const k = Math.max(0, 1 - d / R);
+        const lift = Math.round((k * k * LIFT) / STEP) * STEP;
+        c.style.transform = lift ? `translateY(${-lift}px)` : '';
+      });
+    };
+    const queue = () => { if (!pending) { pending = true; requestAnimationFrame(frame); } };
+    window.addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; queue(); }, { passive: true });
+    document.addEventListener('pointerleave', () => { mx = my = -1e4; queue(); });
+    window.addEventListener('scroll', () => { if (mx > -1e4) queue(); }, { passive: true });
+  }
+
+  // ---- ascii: X-wing chasing a TIE through a starfield ----
+  const esc = ch => (ch === '<' ? '&lt;' : ch === '>' ? '&gt;' : ch === '&' ? '&amp;' : ch);
+  const paint = (chars, cls, cols, rows) => {
+    let out = '';
+    for (let y = 0; y < rows; y++) {
+      let x = 0;
+      while (x < cols) {
+        const k = cls[y * cols + x]; let run = '';
+        while (x < cols && cls[y * cols + x] === k) run += esc(chars[y * cols + x++]);
+        out += k ? `<span class="${k}">${run}</span>` : run;
+      }
+      if (y < rows - 1) out += '\n';
+    }
+    return out;
+  };
+  // throttled animation loop that only runs while el is on screen
+  const loop = (el, fps, tick) => {
+    let on = false, raf = 0, last = 0;
+    const step = t => {
+      raf = requestAnimationFrame(step);
+      if (t - last < 1000 / fps) return;
+      last = t; tick();
+    };
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !on) { on = true; raf = requestAnimationFrame(step); }
+      else if (!e.isIntersecting && on) { on = false; cancelAnimationFrame(raf); }
+    }).observe(el);
+  };
+  (() => {
+    const pre = $('hyper'), ROWS = 7;
+    const SHIP = [
+      ' \\____===-',
+      '  \\\\',
+      '=[[O]]=====>',
+      '  //',
+      ' /----===-',
+    ];
+    const TIE = ['|\\ /|', '|-o-|', '|/ \\|'];
+    const shipCls = c => (c === 'O' ? 'h-ck' : c === '=' || c === '-' ? 'h-s3' : 'h-sh');
+    let cols = 0, stars = [], f = 0, sx = 0, bolts = [];
+    const measure = () => {
+      const probe = document.createElement('span');
+      probe.textContent = '0'.repeat(40);
+      pre.textContent = ''; pre.appendChild(probe);
+      const cw = probe.getBoundingClientRect().width / 40;
+      pre.removeChild(probe);
+      const n = Math.max(20, Math.floor(pre.parentNode.clientWidth / (cw || 8)));
+      if (n !== cols) {
+        cols = n; stars = [];
+        const r = rng(9);
+        for (let i = 0; i < cols * ROWS * 0.07; i++) {
+          const layer = r() < 0.55 ? 0 : r() < 0.7 ? 1 : 2;
+          stars.push({ x: r() * cols, y: Math.floor(r() * ROWS), layer });
+        }
+        if (reduced) sx = Math.floor(cols * 0.35);
+      }
+    };
+    const frame = () => {
+      const N = cols * ROWS, ch = new Array(N).fill(' '), cl = new Array(N).fill('');
+      const put = (x, y, c, k) => { x = Math.round(x); if (x >= 0 && x < cols && y >= 0 && y < ROWS && c !== ' ') { ch[y * cols + x] = c; cl[y * cols + x] = k; } };
+      for (const s of stars) put(s.x, s.y, '.+*'[s.layer], ['h-s1', 'h-s2', 'h-s3'][s.layer]);
+      const tx = sx + 26 + Math.round(Math.sin(f / 9) * 3), ty = 2 + Math.round(Math.sin(f / 13));
+      TIE.forEach((row, j) => [...row].forEach((c, i) => put(tx + i, ty + j, c, c === 'o' ? 'h-lz' : 'h-tie')));
+      for (const b of bolts) { put(b.x, b.y, '-', 'h-lz'); put(b.x + 1, b.y, '-', 'h-lz'); }
+      SHIP.forEach((row, j) => [...row].forEach((c, i) => put(sx + i, 1 + j, c, shipCls(c))));
+      put(sx - 1, 3, f % 2 ? '~' : '-', 'h-fl'); put(sx - 2, 3, f % 3 ? '-' : ' ', 'h-fl');
+      pre.innerHTML = paint(ch, cl, cols, ROWS);
+    };
+    const tick = () => {
+      f++;
+      for (const s of stars) { s.x -= [0.15, 0.4, 0.9][s.layer]; if (s.x < 0) s.x += cols; }
+      sx += 0.45; if (sx > cols + 8) sx = -40;
+      if (f % 18 === 0 && sx > -12) { bolts.push({ x: sx + 7, y: 1 }); bolts.push({ x: sx + 7, y: 5 }); }
+      bolts = bolts.filter(b => (b.x += 2.2) < sx + 34 && b.x < cols);
+      frame();
+    };
+    ((document.fonts && document.fonts.ready) || Promise.resolve()).then(() => {
+      measure(); frame();
+      window.addEventListener('resize', () => { measure(); frame(); }, { passive: true });
+      if (!reduced) loop(pre, 12, tick);
+    });
+  })();
+
+  // ---- split-flap boards ----
+  // flapBoard(el, opts) turns el into a flip board; returns { set(text, {instant}) }.
+  // The real text sits in a visually hidden span; the tiles are hidden from screen readers.
+  const FLAP_CHARS = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,:/-+$%→&!?';
+  const flapBoard = (el, opts = {}) => {
+    const { length = 0, step = 90, maxSteps = 8, stagger = 45, chars = FLAP_CHARS } = opts;
+    const sr = document.createElement('span'); sr.className = 'sr-only';
+    const row = document.createElement('span'); row.className = 'flaps'; row.setAttribute('aria-hidden', 'true');
+    sr.textContent = el.textContent.trim();
+    el.textContent = ''; el.classList.add('flapboard'); el.append(sr, row);
+    const tiles = [];
+    const makeTile = () => {
+      const t = document.createElement('span'); t.className = 'flap';
+      t.innerHTML = '<span class="t"><i> </i></span><span class="b"><i> </i></span><span class="t fold"><i></i></span><span class="b fold"><i></i></span>';
+      const [top, bot, ft, fb] = t.children;
+      row.appendChild(t);
+      return { el: t, top: top.firstChild, bot: bot.firstChild, ft, fb, cur: ' ', head: ' ', path: [], busy: false };
+    };
+    const show = (tile, c) => { tile.cur = tile.head = c; tile.top.textContent = tile.bot.textContent = c; };
+    const flip = (tile, next) => {
+      const half = step / 2;
+      tile.head = next;
+      tile.ft.firstChild.textContent = tile.cur;
+      tile.fb.firstChild.textContent = next;
+      tile.top.textContent = next;
+      tile.el.classList.add('flipping');
+      const a = tile.ft.animate([{ transform: 'rotateX(0deg)', filter: 'brightness(1)' }, { transform: 'rotateX(-90deg)', filter: 'brightness(1.5)' }],
+        { duration: half, easing: 'ease-in', fill: 'both' });
+      const b = tile.fb.animate([{ transform: 'rotateX(90deg)', filter: 'brightness(0.45)' }, { transform: 'rotateX(0deg)', filter: 'brightness(1)' }],
+        { duration: half, delay: half, easing: 'ease-out', fill: 'both' });
+      return b.finished.catch(() => {}).then(() => {
+        tile.cur = next; tile.bot.textContent = next;
+        tile.el.classList.remove('flipping'); a.cancel(); b.cancel();
+      });
+    };
+    const run = async tile => {
+      if (tile.busy) return;
+      tile.busy = true;
+      while (tile.path.length) await flip(tile, tile.path.shift());
+      tile.busy = false;
+    };
+    // walk forward around the character drum like a real board; long walks keep only the last few flips
+    const plan = (from, to) => {
+      const i = chars.indexOf(from), j = chars.indexOf(to);
+      if (i < 0 || j < 0) return [to];
+      const p = [];
+      for (let k = i; k !== j;) { k = (k + 1) % chars.length; p.push(chars[k]); }
+      return p.slice(-Math.max(1, maxSteps - Math.floor(Math.random() * 3)));
+    };
+    const set = (text, { instant = false } = {}) => {
+      text = String(text).toUpperCase();
+      if (text.trim()) sr.textContent = text.trim();
+      const n = Math.max(length, text.length);
+      const s = text.padEnd(n);
+      while (tiles.length < n) tiles.push(makeTile());
+      tiles.forEach((tile, i) => {
+        const c = s[i] || ' ';
+        if (instant || reduced) { tile.path = []; if (!tile.busy) show(tile, c); else tile.path = [c]; return; }
+        if (tile.path.length ? tile.path[tile.path.length - 1] === c : tile.head === c) return;
+        tile.path = c === tile.head ? [] : plan(tile.head, c);
+        if (tile.busy) return;
+        if (stagger) setTimeout(() => run(tile), i * stagger + Math.random() * stagger); else run(tile);
+      });
+    };
+    return { set };
+  };
+// project stats: flip into place once, when scrolled into view
+  const statIO = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    statIO.unobserve(e.target);
+    e.target._flap.set(e.target._final);
+  }), { threshold: 0.6 });
+  document.querySelectorAll('.stat-n').forEach(el => {
+    const final = el.textContent.trim();
+    const board = flapBoard(el, { step: 80, maxSteps: 7, stagger: 70 });
+    board.set(' '.repeat(final.length), { instant: true });
+    el.querySelector('.sr-only').textContent = final;
+    el._flap = board; el._final = final;
+    if (reduced) board.set(final); else statIO.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
