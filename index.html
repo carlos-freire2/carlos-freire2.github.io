@@ -49,6 +49,8 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
 .quest h4{margin:0 0 10px;font-weight:600;font-size:21px;letter-spacing:-0.015em;color:#f4f6fc}
 .quest p{margin:0 0 14px;font-size:14.5px;line-height:1.6;color:#a9afc8;text-wrap:pretty}
 .quest .stack{font-family:'Geist Mono',monospace;font-size:12px;color:#7d84a3}
+.quests{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:24px;align-items:stretch}
+.quest .ph{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:16/10;background:#12162a;border-bottom:1px solid #262c47;font-family:'Silkscreen',monospace;font-size:11px;letter-spacing:0.1em;color:#7d84a3}
 
 .eyebrow{font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:0.2em;color:var(--saber,#3fd6f2);margin-bottom:12px}
 .h2{margin:0 0 40px;font-weight:600;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:-0.03em;color:#f4f6fc}
@@ -131,7 +133,7 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
       <h1 style="margin:0; font-family:'Pixelify Sans',sans-serif; font-weight:700; font-size:clamp(56px,11vw,168px); line-height:1; letter-spacing:0.01em; color:#ffffff; text-shadow:0 3px 0 var(--saber,#3fd6f2), 0 -3px 0 var(--saber,#3fd6f2), 3px 0 0 var(--saber,#3fd6f2), -3px 0 0 var(--saber,#3fd6f2), 3px 3px 0 var(--saber,#3fd6f2), -3px -3px 0 var(--saber,#3fd6f2), 3px -3px 0 var(--saber,#3fd6f2), -3px 3px 0 var(--saber,#3fd6f2);">Carlos Freire</h1>
     </div>
     <p style="margin:28px 0 0;font-family:'Geist Mono',monospace;font-size:clamp(12px,2vw,16px);color:#8ae8f9;">BACKEND · FULL-STACK · MACHINE LEARNING</p>
-</div>
+  </div>
 
   <div style="position:relative; z-index:2; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:32px 48px; padding:0 clamp(20px,4vw,56px) 72px; max-width:1240px; width:100%; margin:0 auto;">
     <div class="px6" style="padding:2px; background:#3a4160; flex-shrink:0;">
@@ -187,13 +189,11 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
     </article>
   </div>
 
-    <div style="margin:128px 0 32px; font-family:'Silkscreen',monospace; font-size:12px; letter-spacing:0.2em; color:#9aa1bd;">▶ SIDE QUESTS</div>
-  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr)); gap:24px;">
-
-      <div style="margin:128px 0 32px; font-family:'Silkscreen',monospace; font-size:12px; letter-spacing:0.2em; color:#9aa1bd;">▶ SIDE QUESTS</div>
-  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr)); gap:24px;">
+  <div style="margin:128px 0 32px; font-family:'Silkscreen',monospace; font-size:12px; letter-spacing:0.2em; color:#9aa1bd;">▶ SIDE QUESTS</div>
+  <div class="quests">
 
     <div class="quest">
+      <div class="ph">IMAGE PLACEHOLDER</div>
       <div class="body">
         <h4>Hack@Brown Workshop</h4>
         <p>Led an introductory Python and web-scraping workshop as Workshops Team Lead for a hackathon with 300+ participants.</p>
@@ -202,6 +202,7 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
     </div>
 
     <div class="quest">
+      <div class="ph">IMAGE PLACEHOLDER</div>
       <div class="body">
         <h4>AWS &amp; Docker Starter Kits</h4>
         <p>Led a 5-person team writing hands-on tutorials for hackathon participants, covering AWS (S3, EC2, Lambda) and Docker (containers, images, deployment).</p>
@@ -214,6 +215,7 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
     </div>
 
     <div class="quest">
+      <div class="ph">IMAGE PLACEHOLDER</div>
       <div class="body">
         <h4>IgniteCS</h4>
         <p>Co-President: coordinated outreach to five Rhode Island schools and ran club events with 50+ students. Previously built lesson plans and taught intro Python and AI to high schoolers.</p>
@@ -234,10 +236,7 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
     </div>
 
   </div>
-
-  </div>
 </section>
-
 
 <section id="log" style="max-width:1240px; margin:0 auto; padding:96px clamp(20px,4vw,56px) 64px;">
   <div class="eyebrow">02 / EXPERIENCE</div><h2 class="h2">Where I've worked</h2>
@@ -343,7 +342,8 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
     '..mmmmdd..',
     '...dddd...',
   ], { m: '#d8dbe8', d: '#9a9fb6' });
-// ---- intro + ambient animation ----
+
+  // ---- intro + ambient animation ----
   $('name').animate(
     [{ clipPath: 'inset(-20% 100% -20% 0)' }, { clipPath: 'inset(-20% 0% -20% 0)' }],
     { duration: reduced ? 0 : 650, delay: reduced ? 0 : 500, easing: 'steps(18, end)', fill: 'forwards' });
@@ -480,8 +480,6 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
   })();
 
   // ---- split-flap boards ----
-  // flapBoard(el, opts) turns el into a flip board; returns { set(text, {instant}) }.
-  // The real text sits in a visually hidden span; the tiles are hidden from screen readers.
   const FLAP_CHARS = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,:/-+$%→&!?';
   const flapBoard = (el, opts = {}) => {
     const { length = 0, step = 90, maxSteps = 8, stagger = 45, chars = FLAP_CHARS } = opts;
@@ -520,7 +518,6 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
       while (tile.path.length) await flip(tile, tile.path.shift());
       tile.busy = false;
     };
-    // walk forward around the character drum like a real board; long walks keep only the last few flips
     const plan = (from, to) => {
       const i = chars.indexOf(from), j = chars.indexOf(to);
       if (i < 0 || j < 0) return [to];
@@ -545,7 +542,8 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
     };
     return { set };
   };
-// project stats: flip into place once, when scrolled into view
+
+  // project stats: flip into place once, when scrolled into view
   const statIO = new IntersectionObserver(entries => entries.forEach(e => {
     if (!e.isIntersecting) return;
     statIO.unobserve(e.target);
