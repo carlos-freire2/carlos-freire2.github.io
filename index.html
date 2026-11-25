@@ -99,6 +99,12 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
 #feats .flap::after{height:1px;margin-top:0;background:#05060c;box-shadow:none}
 #feats .flap i{letter-spacing:0}
 .stat-n .flaps{font-size:.8em}
+.ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 </style>
 </head>
 <body>
@@ -137,10 +143,16 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
 
   <div style="position:relative; z-index:2; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:32px 48px; padding:0 clamp(20px,4vw,56px) 72px; max-width:1240px; width:100%; margin:0 auto;">
     <div class="px6" style="padding:2px; background:#3a4160; flex-shrink:0;">
-      <div id="face" class="px4" aria-label="Carlos Freire initials" style="display:flex; width:clamp(170px,18vw,210px); height:clamp(170px,18vw,210px); align-items:center;justify-content:center;background:#0d1020;color:#3fd6f2;font-family:'Pixelify Sans',sans-serif;font-size:clamp(56px,8vw,88px);border:2px solid #3a4160;">CF</div>
+      <img
+        id="face"
+        class="px4"
+        src="assets/headshot.jpeg"
+        alt="Portrait of Carlos Freire"
+        style="display:block; width:clamp(170px,18vw,210px); height:clamp(170px,18vw,210px); object-fit:cover; border:2px solid #3a4160;"
+      >
     </div>
     <div style="display:flex; flex-direction:column; gap:14px; flex:1 1 360px; max-width:620px; font-size:clamp(17px,1.6vw,20px); line-height:1.6; color:#b9bfd6; text-wrap:pretty;">
-      <p style="margin:0; color:#f4f6fc;">Hi! Welcome to my website :)</p>
+      <p style="margin:0; color:#f4f6fc;">Hi! Welcome to my website :</p>
       <p style="margin:0;">I'm a software engineer and Brown University Computer Science graduate interested in backend engineering, full-stack systems, and machine learning.</p>
       <p style="margin:0;">I enjoy building practical software, exploring systems design, and applying machine learning to real-world problems.</p>
       <p style="margin:0;">Take a look at projects I've built and the work I've done.</p>
@@ -193,7 +205,9 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
   <div class="quests">
 
     <div class="quest">
-      <div class="ph">IMAGE PLACEHOLDER</div>
+      <div class="ph">
+        <img src="assets/HackTeach.jpg" alt="Hack@Brown Workshop">
+      </div>
       <div class="body">
         <h4>Hack@Brown Workshop</h4>
         <p>Led an introductory Python and web-scraping workshop as Workshops Team Lead for a hackathon with 300+ participants.</p>
@@ -202,20 +216,24 @@ a.frame:hover{background:var(--saber,#3fd6f2)}
     </div>
 
     <div class="quest">
-      <div class="ph">IMAGE PLACEHOLDER</div>
+      <div class="ph">
+        <img src="assets/Workshop.jpg" alt="AWS and Docker workshop">
+      </div>
       <div class="body">
         <h4>AWS &amp; Docker Starter Kits</h4>
         <p>Led a 5-person team writing hands-on tutorials for hackathon participants, covering AWS (S3, EC2, Lambda) and Docker (containers, images, deployment).</p>
         <div class="stack" style="margin-bottom:14px;">AWS · Docker · Documentation</div>
         <div style="display:flex; flex-direction:column; gap:8px; font-family:'Silkscreen',monospace; font-size:11px; color:var(--saber,#3fd6f2);">
-          <a href="#" target="_blank">▶ AWS Starter Kit</a>
-          <a href="#" target="_blank">▶ Docker Starter Kit</a>
+          <a href="https://github.com/hackatbrown/cloud-starter/blob/main/Cloud%20Starter%20Kit.pdf" target="_blank">▶ AWS Starter Kit</a>
+          <a href="https://github.com/hackatbrown/docker-starter/blob/master/1-images.md" target="_blank">▶ Docker Starter Kit</a>
         </div>
       </div>
     </div>
 
     <div class="quest">
-      <div class="ph">IMAGE PLACEHOLDER</div>
+      <div class="ph">
+        <img src="assets/Ignite.jpg" alt="IgniteCS teaching">
+      </div>
       <div class="body">
         <h4>IgniteCS</h4>
         <p>Co-President: coordinated outreach to five Rhode Island schools and ran club events with 50+ students. Previously built lesson plans and taught intro Python and AI to high schoolers.</p>
